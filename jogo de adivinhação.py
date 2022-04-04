@@ -1,4 +1,5 @@
 import random
+from fractions import Fraction
 
 print("*" * 60)
 print("Seja muito bem vindo(a) ao o jogo de adivinhação númerica")
@@ -12,6 +13,7 @@ Primeiramente, você terá que inserir a *quantidade de tentativas* que deseja. 
 dirá *ENTRE* quais números o número sorteado vai estar. Por fim, teste sua sorte e chute o número
 
 Muito obrigado e boa sorte! >:D''')
+
 
 def jogo():
     contador = 0
@@ -43,8 +45,11 @@ def jogo():
         print("Mais sorte da próxima vez...")
 
     probabilidade = limite/valor2
-    print(f"\nA probabilidade de acerto era de {limite}/{valor2} ou melhor dizendo de {probabilidade:.2%}")
+    probabilidade_simplificada = Fraction(limite/valor2)
+
+    print(f"\nA probabilidade de acerto era de {probabilidade_simplificada} ou melhor dizendo de {probabilidade:.2%}")
     print("\nAbraços! :)\n")
+
 
 try:
     jogo()
@@ -52,3 +57,4 @@ try:
 except ValueError:
     print('\nInsira apenas números inteiros meu rei')
     jogo()
+
