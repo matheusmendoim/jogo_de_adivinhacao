@@ -19,8 +19,8 @@ def jogo():
     contador = 0
     limite = int(input("\nInsira a quantidade de chances: "))
 
-    if limite == 0:
-        print("\nVocê não tem nenhuma chance :(")
+    if limite <= 0:
+        print("\nEsse programa apenas aceita números naturais. Insira apenas números não nulos positivos (1, 2, 3, 4, 5...) :/")
         exit()
 
     valor1 = int(input("\nO número sorteado será um valor entre o número: "))
@@ -58,3 +58,5 @@ except ValueError:
     print('\nInsira apenas números inteiros meu rei')
     jogo()
 
+except ZeroDivisionError:
+    print('Desculpe-me, mas Não é possível calcular a probabilidade dessa tentativa :/')
